@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Right-click discard tab",
+    "version": "1.0",
+    "permissions": ["tabs", "contextMenus"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "128": "icons/discard-icon-128.png",
+        "48": "icons/discard-icon-48.png",
+        "18": "icons/discard-icon-18.png"
+    }
+}
