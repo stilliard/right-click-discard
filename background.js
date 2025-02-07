@@ -18,3 +18,15 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         chrome.tabs.discard(tab.id);
     }
 });
+
+// Add listener for keyboard shortcut
+chrome.commands.onCommand.addListener((command) => {
+    if (command === "discard-tab") {
+        // Get the current active tab and discard it
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (tabs && tabs[0] && tabs[0].id) {
+                chrome.tabs.discard(tabs[0].id);
+            }
+        });
+    }
+});
